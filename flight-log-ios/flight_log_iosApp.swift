@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct flight_log_iosApp: App {
+    let persistenceContainer = PersistenceContainer.shared
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, persistenceContainer.viewContext)
         }
     }
 }
