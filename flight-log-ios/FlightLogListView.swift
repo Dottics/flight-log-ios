@@ -12,23 +12,23 @@ struct FlightLogListView: View {
     private var flightLogs: FetchedResults<FlightLog>
     
     var body: some View {
-        VStack {
+        ScrollView {
             ForEach(flightLogs, id: \.uuid) { flightLog in
                 NavigationLink {
                     FlightLogDetailView(flightLog: flightLog)
                 } label: {
                     HStack {
                         FlightLogRow(flightLog: flightLog)
+                            .padding(.leading, 8)
+                            .padding(8)
                         Image(systemName: "chevron.right")
+                            .padding(.trailing)
                     }
-                    .padding(.bottom, 12)
                 }
                 .foregroundColor(.primary)
             }
             Spacer()
         }
-        .padding()
-        .navigationTitle("Flight Log")
     }
     
 }

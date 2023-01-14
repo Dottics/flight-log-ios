@@ -13,11 +13,51 @@ struct FlightLogDetailView: View {
     @State private var showEditFlightLog: Bool = false
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            HStack {
+                Text(flightLog.unwrappedDate)
+                    .font(.title2)
+                Spacer()
+                if flightLog.fstd {
+                    VStack {
+                        Image(systemName: "compass.drawing")
+                            .frame(width: 30, height: 30)
+                            .background(.red.opacity(0.2))
+                        .cornerRadius(8)
+                        Text("FSTD")
+                            .font(.caption)
+                    }
+                }
+                if flightLog.instructor {
+                    VStack {
+                        Image(systemName: "graduationcap")
+                            .frame(width: 30, height: 30)
+                            .background(.orange.opacity(0.2))
+                            .cornerRadius(8)
+                        Text("INST")
+                            .font(.caption)
+                    }
+                }
+            }
+            Text("PIC \(flightLog.unwrappedPICName)")
+            HStack {
+                Image(systemName: "airplane")
+                Text(flightLog.aircraftType?.unwrappedName ?? "")
+                Text(flightLog.unwrappedRegistration)
+                Image(systemName: "engine.combustion.fill")
+                Text(flightLog.unwrappedEngineType)
+            }
+            Text("Details")
+                .bold()
+                .padding(.vertical, 2)
             Text(flightLog.unwrappedDetails)
-            Text(flightLog.unwrappedDate)
+            Text("Remarks")
+                .bold()
+                .padding(.vertical, 2)
+            Text(flightLog.unwrappedRemarks)
             Spacer()
         }
+        .padding(.horizontal)
         .navigationTitle("Flight Log Detail")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -52,23 +92,23 @@ struct FlightLogDetailView_Previews: PreviewProvider {
         flightLog.details = "HKG - CPT"
         flightLog.dual = 1
         flightLog.engineType = "single"
-        flightLog.fstd = 1
-        flightLog.instructorFSTD = 1
-        flightLog.instructorME = 1
-        flightLog.instructorSE = 1
+        flightLog.fstd = true
+        flightLog.instructor = true
         flightLog.instrumentActual = "A"
-        flightLog.instrumentFSTD = 1
         flightLog.instrumentNavAids = "Compass"
         flightLog.instrumentPlace = ""
         flightLog.nightLandings = 0
         flightLog.pic = 0
         flightLog.picus = 1
-        flightLog.pilotInCommand = "James Bond"
+        flightLog.pilotInCommand = false
+        flightLog.picName = "James Bond"
         flightLog.registration = "ABCXYZ"
         flightLog.remarks = "Good stuff"
         flightLog.aircraftType = aircraftType
         
-        return FlightLogDetailView(flightLog: flightLog)
-            .environment(\.managedObjectContext, PersistenceContainer.preview.viewContext)
+        return NavigationStack {
+            FlightLogDetailView(flightLog: flightLog)
+        }
+        .environment(\.managedObjectContext, PersistenceContainer.preview.viewContext)
     }
 }

@@ -21,12 +21,10 @@ struct ContentView: View {
         NavigationStack {
             TabView(selection: $selection) {
                 DashboardView()
-                    .navigationTitle("hi")
                     .tabItem { Image(systemName: "chart.pie.fill") }.tag(1)
                 FlightLogListView()
                     .tabItem { Image(systemName: "list.dash") }.tag(2)
             }
-            //.overlay(Rectangle().stroke(style: StrokeStyle(lineWidth: 1)))
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: { showSettings = true }) {

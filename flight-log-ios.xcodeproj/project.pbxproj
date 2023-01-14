@@ -26,6 +26,8 @@
 		52215ECC29574B5F004F5BCE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52215ECB29574B5F004F5BCE /* SettingsView.swift */; };
 		52215ECF29574CB0004F5BCE /* PersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52215ECE29574CB0004F5BCE /* PersistenceContainer.swift */; };
 		52215ED229574D4F004F5BCE /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52215ED029574D4F004F5BCE /* Models.xcdatamodeld */; };
+		52A2529F2972A2B800DACD95 /* SummaryComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A2529E2972A2B800DACD95 /* SummaryComponents.swift */; };
+		52A252A22972AAF800DACD95 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A252A12972AAF800DACD95 /* Column.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,11 @@
 		52215ECB29574B5F004F5BCE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		52215ECE29574CB0004F5BCE /* PersistenceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceContainer.swift; sourceTree = "<group>"; };
 		52215ED129574D4F004F5BCE /* Models.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Models.xcdatamodel; sourceTree = "<group>"; };
+		5285E70B2972B8810052EE3B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5285E70C2972B89B0052EE3B /* DEFINITIONS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DEFINITIONS.md; sourceTree = "<group>"; };
+		5285E70D2972B8B00052EE3B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		52A2529E2972A2B800DACD95 /* SummaryComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryComponents.swift; sourceTree = "<group>"; };
+		52A252A12972AAF800DACD95 /* Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +103,9 @@
 				52215EB329574238004F5BCE /* flight_log_iosApp.swift */,
 				52215EB72957423A004F5BCE /* Assets.xcassets */,
 				52215EB92957423A004F5BCE /* Preview Content */,
+				5285E70B2972B8810052EE3B /* README.md */,
+				5285E70C2972B89B0052EE3B /* DEFINITIONS.md */,
+				5285E70D2972B8B00052EE3B /* CHANGELOG.md */,
 			);
 			path = "flight-log-ios";
 			sourceTree = "<group>";
@@ -127,7 +137,9 @@
 		52215EC2295742C7004F5BCE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				52A252A02972AAEE00DACD95 /* Table */,
 				5211D19B29575D5E0011A376 /* FlightLogRow.swift */,
+				52A2529E2972A2B800DACD95 /* SummaryComponents.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -142,6 +154,14 @@
 				5211D1AA295F451B0011A376 /* User+Extension.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		52A252A02972AAEE00DACD95 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				52A252A12972AAF800DACD95 /* Column.swift */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +237,7 @@
 				5211D1AD295F4C480011A376 /* ProfileEditView.swift in Sources */,
 				52215ECC29574B5F004F5BCE /* SettingsView.swift in Sources */,
 				5211D1A029577A4C0011A376 /* AircraftType+Extension.swift in Sources */,
+				52A252A22972AAF800DACD95 /* Column.swift in Sources */,
 				52215EC8295747EF004F5BCE /* FlightLogListView.swift in Sources */,
 				52215EB629574238004F5BCE /* ContentView.swift in Sources */,
 				52215EC629574337004F5BCE /* DashboardView.swift in Sources */,
@@ -230,6 +251,7 @@
 				5211D1A3295784770011A376 /* View+Extension.swift in Sources */,
 				52215EB429574238004F5BCE /* flight_log_iosApp.swift in Sources */,
 				5211D1A52959EF160011A376 /* FlightLogDetailView.swift in Sources */,
+				52A2529F2972A2B800DACD95 /* SummaryComponents.swift in Sources */,
 				52215EC4295742FA004F5BCE /* AuthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"flight-log-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = KMC9FH7643;
 				ENABLE_PREVIEWS = YES;
@@ -389,7 +411,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"flight-log-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = KMC9FH7643;
 				ENABLE_PREVIEWS = YES;

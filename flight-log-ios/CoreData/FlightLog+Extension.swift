@@ -23,7 +23,8 @@ extension FlightLog {
         String(format: "%.1f", picus)
     }
     var unwrappedFSTD: String {
-        String(format: "%.1f", fstd)
+//        String(format: "%.1f", fstd)
+        return "0"
     }
     var unwrappedCopilot: String {
         String(format: "%.1f", copilot)
@@ -31,7 +32,8 @@ extension FlightLog {
     var unwrappedDayType: String { dayType ?? "" }
     var unwrappedEngineType: String { engineType ?? "" }
     
-    var unwrappedDetails: String {
-        details ?? ""
-    }
+    var unwrappedPICName: String { picName ?? "" }
+    var unwrappedDetails: String { details ?? "" }
+    var unwrappedRemarks: String { remarks ?? "" }
+    var unwrappedRegistration: String { registration ?? "" }
 }

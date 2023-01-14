@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G217" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22C65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AircraftType" representedClassName="AircraftType" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -15,19 +15,17 @@
         <attribute name="details" optional="YES" attributeType="String"/>
         <attribute name="dual" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="engineType" optional="YES" attributeType="String"/>
-        <attribute name="fstd" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="fstd" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="instructorFSTD" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="instructorME" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="instructorSE" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="instructor" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="instrumentActual" optional="YES" attributeType="String"/>
-        <attribute name="instrumentFSTD" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="instrumentNavAids" optional="YES" attributeType="String"/>
         <attribute name="instrumentPlace" optional="YES" attributeType="String"/>
         <attribute name="nightLandings" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="pic" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="picName" optional="YES" attributeType="String"/>
         <attribute name="picus" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="pilotInCommand" optional="YES" attributeType="String"/>
+        <attribute name="pilotInCommand" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="registration" optional="YES" attributeType="String"/>
         <attribute name="remarks" optional="YES" attributeType="String"/>
         <attribute name="userUuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>

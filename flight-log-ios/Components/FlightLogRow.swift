@@ -12,21 +12,19 @@ extension StringProtocol {
 }
 
 struct FlightLogRow: View {
+    
     @ObservedObject var flightLog: FlightLog
+    
     var pilot: String {
-        if let pic = flightLog.pilotInCommand {
-            if pic == "SELF" {
-                return "ME"
-            } else {
-                let subStrings = flightLog.pilotInCommand?.split(separator: " ")
-                if subStrings!.count > 1 {
-                    return "\(subStrings![0][0])\(subStrings![1][0])"
-                } else {
-                    return "\(subStrings![0])"
-                }
+        if flightLog.pilotInCommand {
+            return "ME"
+        } else {
+            let subStrings = flightLog.picName?.split(separator: " ")
+            if subStrings!.count > 1 {
+                return "\(subStrings![0][0])\(subStrings![1][0])"
             }
+            return ""
         }
-        return ""
     }
     
     var body: some View {
@@ -93,24 +91,21 @@ struct FlightLogRow_Previews: PreviewProvider {
         flightLog.details = "HKG - CPT"
         flightLog.dual = 1
         flightLog.engineType = "single"
-        flightLog.fstd = 1
-        flightLog.instructorFSTD = 1
-        flightLog.instructorME = 1
-        flightLog.instructorSE = 1
+        flightLog.fstd = false
         flightLog.instrumentActual = "A"
-        flightLog.instrumentFSTD = 1
         flightLog.instrumentNavAids = "Compass"
         flightLog.instrumentPlace = ""
         flightLog.nightLandings = 0
         flightLog.pic = 0
         flightLog.picus = 1
-        flightLog.pilotInCommand = "James Bond"
+        flightLog.pilotInCommand = false
+        flightLog.picName = "James Bond"
         flightLog.registration = "ABCXYZ"
         flightLog.remarks = "Good stuff"
         flightLog.aircraftType = aircraftType
         
         let flightLog1 = FlightLog(context: viewContext)
-        flightLog1.id = 1
+        flightLog1.id = 2
         flightLog1.uuid = UUID()
         flightLog1.copilot = 0
         flightLog1.date = Date(timeInterval: -1000, since: .now)
@@ -118,19 +113,16 @@ struct FlightLogRow_Previews: PreviewProvider {
         flightLog1.dayType = "day"
         flightLog1.details = "HKG - CPT"
         flightLog1.dual = 1
+        flightLog1.fstd = false
         flightLog1.engineType = "single"
-        flightLog1.fstd = 1
-        flightLog1.instructorFSTD = 1
-        flightLog1.instructorME = 1
-        flightLog1.instructorSE = 1
         flightLog1.instrumentActual = "A"
-        flightLog1.instrumentFSTD = 1
         flightLog1.instrumentNavAids = "Compass"
         flightLog1.instrumentPlace = ""
         flightLog1.nightLandings = 0
         flightLog1.pic = 1
         flightLog1.picus = 1
-        flightLog1.pilotInCommand = "SELF"
+        flightLog1.picName = "SELF"
+        flightLog1.pilotInCommand = true
         flightLog1.registration = "ABCXYZ"
         flightLog1.remarks = "Good stuff"
         flightLog1.aircraftType = aircraftType
@@ -139,6 +131,6 @@ struct FlightLogRow_Previews: PreviewProvider {
             FlightLogRow(flightLog: flightLog)
             FlightLogRow(flightLog: flightLog1)
         }
-            .previewLayout(.fixed(width: 400, height: 300))
+        .previewLayout(.fixed(width: 400, height: 300))
     }
 }
